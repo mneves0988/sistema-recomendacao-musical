@@ -8,7 +8,7 @@
 - [x] Identidade visual aprovada; integração de código preparada.
 - [x] Quatro arquivos de marca publicados em assets/brand/ (ea4e8f1).
 - [x] Identidade visual validada na aplicação pública após reboot.
-- [ ] Repetir smoke test após a atualização visual.
+- [x] Smoke test após a atualização visual aprovado (run 45541511765, 16,4 s de teste E2E).
 - [x] Cinco evidências do Neo4j publicadas em docs/images/ (a766d38) e referenciadas nos READMEs.
 - [x] Capturas das três áreas e do Graph Explorer fornecidas e conferidas.
 - [x] Quatro capturas finais publicadas (1edb863) e referenciadas nos READMEs.
