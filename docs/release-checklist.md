@@ -18,7 +18,7 @@
 - [x] README PT/EN com arquitetura, algoritmos, demo, resultados e limitações.
 - [x] Autor confirmou que o dataset pode ser utilizado. Mantida a atribuição e a opção de baixar o dataset na fonte; nenhum CSV real é redistribuído. Termos específicos não verificados independentemente.
 - [x] Revisão preliminar do diff entre as branches: sem .env ou secrets.toml versionados; .env.example contém placeholders.
-- [ ] Integrar a main preservando o workflow de monitoramento.
+- [x] PR #1 integrado à main (7608c5d); workflow preservado e app.py idêntico ao da branch de deploy.
 - [ ] Criar tag e release v1.0.0 após a revisão final.
 - [x] Demo hospedada: https://soundgraph.streamlit.app/.
 - [x] Smoke test E2E público aprovado na main (run 45531869057).
