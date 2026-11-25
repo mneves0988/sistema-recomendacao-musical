@@ -41,3 +41,9 @@ PASS: smoke test completed in 18.1s
 ```
 
 Teste cobre a jornada padrão Track Discovery, não testes de carga, todos os métodos ou todas as telas. A primeira execução falhou na instalação do Chromium em Ubuntu 26.04; a segunda falhou ao localizar a interface; as correções fixaram Ubuntu 24.04 e buscaram o seletor também em frames.
+
+## QA visual da aplicação pública (25/11/2026)
+
+Quatro capturas fornecidas pelo autor após o reboot do Streamlit confirmam a nova marca e as três áreas em funcionamento. Track Discovery: Frank Zappa / Willie the Pimp, Híbrido, peso 70%, limite 5; Zig Zag Wanderer 62,71%, Jaccard 54,55%, áudio 81,75%, seis tags compartilhadas. Graph Explorer: 10 nós e 14 relações visíveis. Artist Discovery: Traffic 62,50%, Jefferson Airplane 61,90%, Jimi Hendrix 57,14%, Captain Beefheart & His Magic Band 54,55%. Musical DNA: 20 faixas, rock 19 (95%), progressive_rock 18 (90%), psychedelic_rock 10 (50%).
+
+Essas capturas comprovam os fluxos acima, não a execução de todos os pesos, métodos, links externos ou um novo smoke test automatizado após a mudança visual. A publicação das capturas finais no GitHub ainda está pendente.

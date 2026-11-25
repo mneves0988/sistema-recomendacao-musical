@@ -132,7 +132,7 @@ notepad .env
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-Consulte [execução local](docs/run-app.md) e [preparação dos dados](data/README.md). Nunca versione o arquivo .env. O repositório contém uma pequena fixture sintética; o dataset real não é redistribuído enquanto suas condições de licença não forem confirmadas.
+Consulte [execução local](docs/run-app.md) e [preparação dos dados](data/README.md). Nunca versione o arquivo .env. O repositório contém uma pequena fixture sintética; o dataset real não é incluído para manter o repositório leve. Baixe-o na fonte indicada e observe seus termos de uso.
 
 ## Organização
 

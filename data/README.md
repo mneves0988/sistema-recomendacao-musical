@@ -8,7 +8,7 @@ Baixe e extraia o arquivo original em data/raw/. Gere os seis CSVs tratados:
 .\.venv\Scripts\python.exe scripts/prepare_data.py "data/raw/Music Info.csv" data/processed
 ```
 
-Para gerar uma amostra real apenas no seu computador, acrescente --limit 1000. A licença da versão específica do Kaggle não foi confirmada na página acessível, portanto os CSVs reais não são redistribuídos no repositório. O arquivo data/sample/music_info_synthetic.csv é uma fixture **sintética**, com três faixas fictícias, para estudar a estrutura e testar a preparação sem baixar o dataset. Não representa os resultados reais.
+Para gerar uma amostra real apenas no seu computador, acrescente --limit 1000. O autor confirmou a liberação do dataset para uso no projeto. Os termos específicos não foram verificados independentemente; mantenha a atribuição e observe a licença da fonte. Os CSVs reais não são incluídos para manter o repositório leve. O arquivo data/sample/music_info_synthetic.csv é uma fixture **sintética**, com três faixas fictícias, para estudar a estrutura e testar a preparação sem baixar o dataset. Não representa os resultados reais.
 
 Contagens esperadas da base completa: 50.683 faixas, 8.317 artistas, 15 gêneros, 100 tags, 185.313 associações faixa-tag e 22.348 associações faixa-gênero. As 1.127 faixas sem tags e as 28.335 sem gênero são mantidas.
 

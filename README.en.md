@@ -133,7 +133,7 @@ cp .env.example .env
 python -m streamlit run app.py
 ```
 
-For Windows instructions see [run-app.md](docs/run-app.md). Do not commit credentials. A synthetic fixture is included; the real catalog CSVs are not redistributed while the source's license terms remain unverified.
+For Windows instructions see [run-app.md](docs/run-app.md). Do not commit credentials. A synthetic fixture is included; the real catalog CSVs are not included to keep the repository lightweight. Download the dataset from the linked source and follow its terms.
 
 ## Repository structure
 
