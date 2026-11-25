@@ -1,0 +1,4 @@
+track_id,name,artist,spotify_id,genre,year,duration_ms,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature,tags
+DEMO001,Orbit Lines,Example Artist A,,Jazz,2024,220000,0.4,0.7,5,-8,1,0.04,0.1,0.8,0.2,0.5,110,4,"jazz, instrumental, guitar"
+DEMO002,Starlight Steps,Example Artist B,,Jazz,2024,230000,0.5,0.7,5,-8,1,0.04,0.2,0.7,0.2,0.6,115,4,"jazz, instrumental, guitar"
+DEMO003,Cloud Circuit,Example Artist C,,,2024,200000,0.7,0.6,2,-10,0,0.05,0.3,0.7,0.1,0.4,120,4,"electronic, instrumental"
