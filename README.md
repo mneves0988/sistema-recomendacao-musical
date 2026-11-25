@@ -50,8 +50,23 @@ RETURN type(r) AS relationship, count(*) AS total
 ORDER BY total DESC;
 ```
 
-Contagens esperadas com os seis CSVs verificados, em uma instância vazia: 50.683 Track, 8.317 Artist, 15 Genre, 100 Tag; 50.683 PERFORMED_BY, 22.348 IN_GENRE e 185.313 HAS_TAG. Total: 59.115 nós e 258.344 relacionamentos. A carga ainda deve ser executada e validada no Aura.
+Contagens esperadas com os seis CSVs verificados, em uma instância vazia: 50.683 Track, 8.317 Artist, 15 Genre, 100 Tag; 50.683 PERFORMED_BY, 22.348 IN_GENRE e 185.313 HAS_TAG. Total: 59.115 nós e 258.344 relacionamentos. A carga e essas contagens foram confirmadas no AuraDB.
+
+## Recomendação explicável
+
+- V1: quantidade de tags compartilhadas.
+- V2: similaridade de Jaccard (interseção / união).
+- V3: combinação de Jaccard (70% por padrão) e similaridade de cinco características sonoras (30%).
+- Artist Discovery: Jaccard entre conjuntos de tags dos repertórios.
+- Musical DNA: frequência das tags nas músicas de um artista.
+- Graph Explorer: conexões que explicam uma recomendação.
+
+A lógica reside no Cypher, sem GDS. Todos os candidatos precisam compartilhar pelo menos uma tag, inclusive quando o peso das tags é zero. Os pesos são heurísticos; scores não são probabilidades de preferência.
+
+## Interface
+
+A interface Streamlit usa o driver oficial Neo4j e consultas parametrizadas da pasta `cypher/`. Veja [como executar localmente](docs/run-app.md) e [resultados e troubleshooting](docs/validation.md).
 
 ## Status
 
-Modelagem e arquivos de entrada definidos. Importação, consultas de recomendação e evidências visuais pendentes de validação.
+Grafo importado e validado; três algoritmos, descoberta de artistas e explicabilidade testados no Aura. A interface está implementada nesta branch e ainda requer teste de integração. Amostra de dados (sujeita à licença), scripts de carga e screenshots finais ainda pendentes.
