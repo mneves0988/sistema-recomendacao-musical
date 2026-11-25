@@ -117,8 +117,9 @@ def main():
     def run(name, **params):
         return query(name, params, database, (uri, username), driver)
 
-    # One searchable native control, backed by the complete artist catalog.
-    artists = [r["artist"] for r in run("list_artists")]
+    # One artist-only catalog, with aggregated track counts (no track titles).
+    catalog = {r["artist"]: r["track_count"] for r in run("list_artists")}
+    artists = list(catalog)
     if not artists:
         st.warning("O catálogo está vazio. Confira a importação do grafo.")
         return
@@ -132,12 +133,26 @@ def main():
         else:
             artist_col = st.container()
         with artist_col:
-            default_artist = artists.index("Frank Zappa") if "Frank Zappa" in artists else 0
+            labels_by_page = {
+                "Track Discovery": "Artista da música de referência",
+                "Artist Discovery": "Artista de referência",
+                "Musical DNA": "Artista para analisar",
+            }
             artist = st.selectbox(
-                "Buscar artista", artists, index=default_artist,
-                key="reference_artist",
-                help="Digite qualquer parte do nome neste campo e selecione um artista do catálogo.",
+                labels_by_page[page], artists, index=None,
+                placeholder="Digite o nome de um artista ou banda",
+                format_func=lambda name: f"{name} · {catalog[name]} {'faixa' if catalog[name] == 1 else 'faixas'}",
+                key=f"reference_artist_{page}",
+                help="Somente artistas e bandas do catálogo. A quantidade indica as faixas disponíveis.",
             )
+        if artist is None:
+            if page == "Track Discovery":
+                with track_col:
+                    st.selectbox("Música de referência", [], index=None,
+                                 placeholder="Selecione primeiro um artista", disabled=True,
+                                 key="track_waiting")
+            st.info("Escolha um artista para começar. Ex.: Pink Floyd, Daft Punk ou Frank Zappa.")
+            return
         if page == "Track Discovery":
             tracks = run("artist_tracks", artist=artist)
             if not tracks:
@@ -146,15 +161,16 @@ def main():
             by_id = {t["track_id"]: t for t in tracks}
             labels = track_labels(tracks)
             ids = list(by_id)
-            preferred = next((t["track_id"] for t in tracks
-                              if artist == "Frank Zappa" and t["track"] == "Willie the Pimp"), None)
-            if preferred is None:
-                preferred = next((t["track_id"] for t in tracks if t["total_tags"] > 0), ids[0])
             with track_col:
                 selected_id = st.selectbox("Música de referência", ids,
-                                           index=ids.index(preferred),
+                                           index=None,
+                                           placeholder="Digite o nome de uma música",
                                            format_func=labels.__getitem__,
-                                           key=f"track_{artist}")
+                                           key=f"track_{artist}",
+                                           help="Apenas músicas do artista selecionado.")
+            if selected_id is None:
+                st.info(f"Escolha uma das {len(tracks)} faixas de {artist}.")
+                return
             source = by_id[selected_id]
             st.caption(f"{source['total_tags']} tags disponíveis na música de referência")
             if source["total_tags"] == 0:
@@ -228,10 +244,10 @@ def main():
                         st.caption(f"{row['shared_tags']} tags em comum · {row['target_total']} tags na candidata")
                         st.write(" · ".join(tag.replace("_", " ") for tag in sorted(row["explanation"])))
     else:
-        tracks = run("artist_tracks", artist=artist)
+        total_tracks = catalog[artist]
         rows = run("musical_dna", artist=artist, limit=10)
         st.subheader("Musical DNA")
-        st.metric("Músicas na base", len(tracks))
+        st.metric("Músicas na base", total_tracks)
         if not rows:
             st.info("Nenhuma tag disponível.")
             return
@@ -240,7 +256,7 @@ def main():
             st.bar_chart(rows, x="tag", y="tracks", horizontal=True)
         with table_col:
             st.dataframe([{"Tag": r["tag"], "Músicas": r["tracks"],
-                           "Cobertura (%)": round(100*r["tracks"]/len(tracks), 2)} for r in rows],
+                           "Cobertura (%)": round(100*r["tracks"]/total_tracks, 2)} for r in rows],
                          hide_index=True)
         st.caption("Percentual de músicas associadas a cada tag. Uma música pode possuir múltiplas tags.")
 
