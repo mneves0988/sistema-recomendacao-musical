@@ -101,6 +101,22 @@ No primeiro exemplo, as faixas compartilham seis tags, Jaccard de 54,55% e simil
 
 A [execução E2E nº 3](https://github.com/mneves0988/sistema-recomendacao-musical/actions/runs/45531869057) confirmou a URL pública, o catálogo do Neo4j, Zig Zag Wanderer com 62,71% e o Graph Explorer. O teste de navegador terminou em 18,1 s; a execução completa levou 92 s. Esses tempos são de uma execução, não benchmarks de latência ou carga.
 
+## Evidências no Neo4j Aura
+
+### Modelagem e importação
+
+![Modelo do grafo no Aura Import](docs/images/graph-model.png)
+
+[Resultado da importação](docs/images/import-results.png) · [Schema do grafo](docs/images/graph-schema.png)
+
+### Explicabilidade das recomendações
+
+![Conexões reais entre a faixa de referência e a recomendação](docs/images/explainable-recommendation.png)
+
+[Perfil musical do artista no Neo4j](docs/images/artist-musical-profile.png)
+
+As imagens documentam o desenvolvimento no AuraDB; não são simulações nem capturas da versão final da interface web.
+
 ## Reproduzir o projeto
 
 1. Baixe **Music Info.csv** da [fonte no Kaggle](https://www.kaggle.com/datasets/undefinenull/million-song-dataset-spotify-lastfm). Não é necessário baixar o histórico de ouvintes.
@@ -123,6 +139,7 @@ Consulte [execução local](docs/run-app.md) e [preparação dos dados](data/REA
 | Caminho | Responsabilidade |
 |---|---|
 | app.py | Interface e integração com o Neo4j |
+| assets/brand/ | Identidade visual oficial |
 | cypher/ | Consultas de descoberta, explicação e validação |
 | cypher/import/ | Constraints e carga alternativa |
 | scripts/ | Preparação e importação programática |

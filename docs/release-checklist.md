@@ -6,8 +6,10 @@
 - [x] Primeira interface conectada ao Aura; revisão de UX confirmada pelo usuário.
 - [x] Scripts de preparação e alternativa de carga adicionados; carga alternativa ainda não testada no Aura.
 - [x] Identidade visual aprovada; integração de código preparada.
-- [ ] Adicionar os quatro arquivos de marca em assets/brand/ e validar o deploy.
-- [ ] Reunir screenshots reais e atuais em docs/images/.
+- [x] Quatro arquivos de marca publicados em assets/brand/ (ea4e8f1).
+- [ ] Validar deploy com identidade visual e repetir smoke test.
+- [x] Cinco evidências do Neo4j publicadas em docs/images/ (a766d38) e referenciadas nos READMEs.
+- [ ] Capturar screenshots das três áreas da interface final.
 - [x] QA E2E do Track Discovery padrão (Zig Zag Wanderer, 62,71%).
 - [ ] Executar QA final das outras áreas, pesos, métodos e links.
 - [x] README PT/EN com arquitetura, algoritmos, demo, resultados e limitações.
