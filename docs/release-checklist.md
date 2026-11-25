@@ -6,11 +6,14 @@
 - [x] Primeira interface conectada ao Aura; revisão de UX confirmada pelo usuário.
 - [x] Scripts de preparação e alternativa de carga adicionados; carga alternativa ainda não testada no Aura.
 - [ ] Reunir screenshots reais e atuais em docs/images/.
-- [ ] Executar QA final das três áreas, pesos e links.
-- [ ] README final PT/EN.
+- [x] QA E2E do Track Discovery padrão (Zig Zag Wanderer, 62,71%).
+- [ ] Executar QA final das outras áreas, pesos, métodos e links.
+- [x] README PT/EN com arquitetura, algoritmos, demo, resultados e limitações.
 - [ ] Confirmar licença antes de publicar amostra real; fixture sintética e gerador local disponíveis.
 - [ ] Revisar branch e integrar a main.
-- [ ] Avaliar demo hospedada, com secrets e acesso somente leitura, sem expor credenciais.
+- [x] Demo hospedada: https://soundgraph.streamlit.app/.
+- [x] Smoke test E2E público aprovado na main (run 45531869057).
+- [ ] Confirmar privilégios efetivos de leitura da conta Aura usada no deploy.
 - [ ] Submeter o repositório à DIO.
 
 Escopo congelado: sem álbum, sem novos datasets, GDS ou APIs externas de recomendação.

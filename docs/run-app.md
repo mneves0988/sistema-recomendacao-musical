@@ -14,6 +14,6 @@ notepad .env
 
 Use a URI e as credenciais da sua instância. Nunca publique o .env. O app usa sessões de leitura, consultas parametrizadas e cache temporário de resultados. Não publica dados nem credenciais automaticamente.
 
-Teste manual: selecione Frank Zappa / Willie the Pimp, V3, 70%, 10 recomendações. A primeira deve ser Zig Zag Wanderer (62,71%). Confira o Graph Explorer e as outras áreas. Os resultados do Aura já foram validados, mas a interface ainda não foi executada contra a instância.
+Teste manual: selecione Frank Zappa / Willie the Pimp, V3, 70%, 10 recomendações. A primeira deve ser Zig Zag Wanderer (62,71%). Confira o Graph Explorer e as outras áreas. A interface foi executada localmente e na demonstração pública; o fluxo híbrido padrão passou no smoke test E2E.
 
-Para hospedagem posterior, use os secrets do Streamlit com as mesmas variáveis. Não é necessário fazer deploy para testar localmente.
+A [demonstração pública](https://soundgraph.streamlit.app/) está hospedada no Streamlit Community Cloud. Use os secrets do Streamlit com as mesmas variáveis ao publicar sua própria instância. A aplicação usa sessões de leitura; os privilégios de leitura no servidor ainda precisam ser confirmados.
