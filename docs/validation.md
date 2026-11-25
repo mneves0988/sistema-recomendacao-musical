@@ -46,4 +46,4 @@ Teste cobre a jornada padrão Track Discovery, não testes de carga, todos os m�
 
 Quatro capturas fornecidas pelo autor após o reboot do Streamlit confirmam a nova marca e as três áreas em funcionamento. Track Discovery: Frank Zappa / Willie the Pimp, Híbrido, peso 70%, limite 5; Zig Zag Wanderer 62,71%, Jaccard 54,55%, áudio 81,75%, seis tags compartilhadas. Graph Explorer: 10 nós e 14 relações visíveis. Artist Discovery: Traffic 62,50%, Jefferson Airplane 61,90%, Jimi Hendrix 57,14%, Captain Beefheart & His Magic Band 54,55%. Musical DNA: 20 faixas, rock 19 (95%), progressive_rock 18 (90%), psychedelic_rock 10 (50%).
 
-Essas capturas comprovam os fluxos acima, não a execução de todos os pesos, métodos, links externos ou um novo smoke test automatizado após a mudança visual. A publicação das capturas finais no GitHub ainda está pendente.
+Essas capturas comprovam os fluxos acima, não a execução de todos os pesos, métodos, links externos ou um novo smoke test automatizado após a mudança visual. As quatro capturas finais foram publicadas no commit 1edb863 e estão referenciadas nos READMEs.

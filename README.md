@@ -101,6 +101,29 @@ No primeiro exemplo, as faixas compartilham seis tags, Jaccard de 54,55% e simil
 
 A [execução E2E nº 3](https://github.com/mneves0988/sistema-recomendacao-musical/actions/runs/45531869057) confirmou a URL pública, o catálogo do Neo4j, Zig Zag Wanderer com 62,71% e o Graph Explorer. O teste de navegador terminou em 18,1 s; a execução completa levou 92 s. Esses tempos são de uma execução, não benchmarks de latência ou carga.
 
+## Demonstração da interface
+
+Capturas reais da aplicação pública, com a identidade visual final e resultados obtidos no Neo4j.
+
+### Track Discovery
+
+![Seleção de Frank Zappa e Willie the Pimp com recomendação híbrida de 62,71%](docs/images/track-discovery.png)
+
+### Graph Explorer
+
+![Subgrafo explicativo de Willie the Pimp e Zig Zag Wanderer com seis tags compartilhadas](docs/images/graph-explorer.png)
+
+### Artist Discovery e Musical DNA
+
+<details>
+<summary>Ver resultados de descoberta de artistas e perfil musical</summary>
+
+![Artistas semelhantes a Frank Zappa com scores Jaccard](docs/images/artist-discovery.png)
+
+![Perfil musical de Frank Zappa com 20 faixas e cobertura de tags](docs/images/musical-dna.png)
+
+</details>
+
 ## Evidências no Neo4j Aura
 
 ### Modelagem e importação

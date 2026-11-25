@@ -11,13 +11,15 @@
 - [ ] Repetir smoke test após a atualização visual.
 - [x] Cinco evidências do Neo4j publicadas em docs/images/ (a766d38) e referenciadas nos READMEs.
 - [x] Capturas das três áreas e do Graph Explorer fornecidas e conferidas.
-- [ ] Publicar as quatro capturas finais em docs/images/ e referenciar nos READMEs.
+- [x] Quatro capturas finais publicadas (1edb863) e referenciadas nos READMEs.
 - [x] QA E2E do Track Discovery padrão (Zig Zag Wanderer, 62,71%).
 - [x] QA visual dos resultados de Artist Discovery e Musical DNA.
 - [ ] QA complementar de pesos, métodos e links.
 - [x] README PT/EN com arquitetura, algoritmos, demo, resultados e limitações.
 - [x] Autor confirmou que o dataset pode ser utilizado. Mantida a atribuição e a opção de baixar o dataset na fonte; nenhum CSV real é redistribuído. Termos específicos não verificados independentemente.
-- [ ] Revisar branch e integrar a main.
+- [x] Revisão preliminar do diff entre as branches: sem .env ou secrets.toml versionados; .env.example contém placeholders.
+- [ ] Integrar a main preservando o workflow de monitoramento.
+- [ ] Criar tag e release v1.0.0 após a revisão final.
 - [x] Demo hospedada: https://soundgraph.streamlit.app/.
 - [x] Smoke test E2E público aprovado na main (run 45531869057).
 - [ ] Confirmar privilégios efetivos de leitura da conta Aura usada no deploy.
