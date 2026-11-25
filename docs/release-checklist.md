@@ -5,6 +5,8 @@
 - [x] Graph Explorer validado no Aura.
 - [x] Primeira interface conectada ao Aura; revisão de UX confirmada pelo usuário.
 - [x] Scripts de preparação e alternativa de carga adicionados; carga alternativa ainda não testada no Aura.
+- [x] Identidade visual aprovada; integração de código preparada.
+- [ ] Adicionar os quatro arquivos de marca em assets/brand/ e validar o deploy.
 - [ ] Reunir screenshots reais e atuais em docs/images/.
 - [x] QA E2E do Track Discovery padrão (Zig Zag Wanderer, 62,71%).
 - [ ] Executar QA final das outras áreas, pesos, métodos e links.

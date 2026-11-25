@@ -11,8 +11,15 @@ from neo4j import GraphDatabase, READ_ACCESS
 from neo4j.exceptions import Neo4jError, DriverError
 
 ROOT = Path(__file__).resolve().parent
+BRAND = ROOT / "assets" / "brand"
+FAVICON = BRAND / "favicon.png"
 load_dotenv(ROOT / ".env")
-st.set_page_config(page_title="SoundGraph | Music Discovery", page_icon="🎵", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(
+    page_title="SoundGraph | Music Discovery",
+    page_icon=str(FAVICON) if FAVICON.is_file() else "🎵",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
 
 
 def setting(name, default=""):
@@ -103,8 +110,17 @@ def track_card(row, position):
 
 
 def main():
-    st.title("SoundGraph")
-    st.caption("Descubra música através de conexões · Neo4j AuraDB + Cypher")
+    icon = BRAND / "icon.png"
+    if icon.is_file():
+        mark, heading = st.columns([1, 9], gap="small", vertical_alignment="center")
+        with mark:
+            st.image(str(icon), width=72)
+        with heading:
+            st.title("SoundGraph")
+            st.caption("Descubra música através de conexões · Neo4j AuraDB + Cypher")
+    else:
+        st.title("SoundGraph")
+        st.caption("Descubra música através de conexões · Neo4j AuraDB + Cypher")
     uri = setting("NEO4J_URI")
     username = setting("NEO4J_USERNAME", "neo4j")
     password = setting("NEO4J_PASSWORD")

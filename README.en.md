@@ -1,5 +1,7 @@
 # SoundGraph
 
+![SoundGraph | Discover music through connections](assets/brand/banner.webp)
+
 **Discover music through connections.** An explainable content-based music recommender built with Neo4j and Cypher for the Neo4j + DIO bootcamp.
 
 [**Live demo**](https://soundgraph.streamlit.app/) · [Português](README.md) · [Validation (PT)](docs/validation.md)
